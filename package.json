@@ -9,9 +9,9 @@
     "startWSL": "echo 'Server on WSL running at :'&& echo 'http://'$(hostname -I)'':1234 | tr -d ' ' && yarn start",
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
-    "test": "CI=true jest",
+    "test": "CI=true jest -u",
     "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage --colors"
+    "test:coverage": "jest -u --coverage --colors"
   },
   "dependencies": {
     "react": "^16.8.6",
