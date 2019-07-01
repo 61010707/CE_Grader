@@ -1,5 +1,5 @@
 {
-  "name": "CE_Grader",
+  "name": "ce_grader",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/61010707/CE_Grader.git",
@@ -13,6 +13,9 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "parcel-bundler": "^1.12.3",
+    "react95": "^2.0.0",
+    "styled-components": "^4.3.2"
   }
 }
