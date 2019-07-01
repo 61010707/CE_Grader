@@ -1,0 +1,8 @@
+{
+  "name": "CE_Grader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/61010707/CE_Grader.git",
+  "author": "DrZin <61010707@kmitl.ac.th>",
+  "license": "MIT"
+}
