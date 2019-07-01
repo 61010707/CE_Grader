@@ -8,8 +8,15 @@ const Div = styled.div`
 
 const ExtraDiv = styled(Div)`
   background-color: red;
+  font-size: 30px;
 `;
 
 export default () => {
-  return <ExtraDiv>Login</ExtraDiv>;
+  return (
+    <div>
+      This is div
+      <Div>This is Div with styled</Div>
+      <ExtraDiv>This is Extra Div styled</ExtraDiv>
+    </div>
+  );
 };
