@@ -2,20 +2,31 @@ import React from "react";
 import { shallow, mount, render } from "enzyme";
 
 import Login from "./index";
+import { StateContext, initialState } from "../../store/StateProvider"
+import reducer from '../../store/reducer'
+import {TEST_ACTION} from '../../store/actions_const'
 
-describe("Login", () => {
-  it("should render ", () => {
-    const component = shallow(<Login />);
-    expect(component).toMatchSnapshot();
-  });
+const test_case = {
+  type: TEST_ACTION,
+  payload: "TEST"
+}
 
-  it("should mount", () => {
-    const component = mount(<Login />);
-    expect(component).toMatchSnapshot();
-  });
+describe("Login with useContext", () => {
 
-  it("should render", () => {
-    const component = render(<Login />);
-    expect(component).toMatchSnapshot();
-  });
+  const App = () => {
+    let [state, dispatch] = React.useReducer(reducer, initialState)
+    React.useEffect(()=>{
+      dispatch(test_case)
+    })
+    return (
+      <StateContext.Provider value={{ state, dispatch }}>
+        <Login />
+      </StateContext.Provider>
+    )
+  }
+  const component = mount(<App />)
+  it('should match with case', () => {
+    expect(component.contains(test_case.payload)).toBe(true)
+  })
 });
+
